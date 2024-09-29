@@ -23,7 +23,9 @@ else:
 if sys.platform == "linux":
     disabled_warnings = ['-Wno-unused-function', '-Wno-uninitialized']
     compile_args = ['-O2', '-ffast-math'] + disabled_warnings
-else:
+elif sys.platform == "darwin":  # macOS
+    compile_args = ['-O2', '-std=c99']
+else:  # windows
     compile_args = {'gcc': ['/Qstd=c99']}
 
 # define the _rankfm extension including the wrapped MT module
