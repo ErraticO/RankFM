@@ -26,7 +26,7 @@ if sys.platform == "linux":
 elif sys.platform == "darwin":
     compile_args = ['-std=c99']
 else:
-    compile_args = {'gcc': ['/Qstd=c99']}
+    compile_args = ['/Qstd=c99']
 
 # define the _rankfm extension including the wrapped MT module
 extensions = [
